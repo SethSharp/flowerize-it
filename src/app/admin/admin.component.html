@@ -1,0 +1,116 @@
+<style>
+  .add-item {
+    width: 75%;
+    margin-left: 13.5%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .existing-items {
+    width: 75%;
+    margin-left: 13.5%;
+  }
+  img {
+    width: 25%;
+    height: 25%;
+  }
+  .edit-description {
+    float: left;
+  }
+  .edit-img {
+    float: right;
+  }
+</style>
+
+<!-- Add a new item -->
+
+<div class="add-item">
+  <mat-card>
+    <mat-card-title> Add new item </mat-card-title>
+    <mat-form-field appearance="outline">
+      <input matInput autocomplete="off" placeholder="Name of item"/>
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <textarea matInput placeholder="Descrpition of item"> </textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <input matInput autocomplete="off" placeholder="Quantity of item"/>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <input matInput autocomplete="off" placeholder="Price of item"/>
+    </mat-form-field>
+    <br>
+    <p> An image input </p>
+    <p> Category selection </p>
+
+    <button mat-button> Add item</button>
+  </mat-card>
+
+</div>
+
+<br>
+
+<style>
+  .search-field {
+    margin-top: 3%;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  .orders {
+    width: 75%;
+    margin-left: 13.5%;
+    margin-top: 2%;
+  }
+  .order-actions {
+    width: 100%;
+  }
+</style>
+
+<div class="search-field">
+  <mat-form-field>
+    <mat-label> Get item by category</mat-label>
+    <input matInput type="search"  [(ngModel)]="search" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<!-- Display all items in the store, give option to edit content as well as re-stock it -->
+
+<div class="existing-items">
+  <mat-accordion *ngFor="let item of (items | filterItems:search) as folder">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          {{item.title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-card class="edit-description">
+        <mat-form-field appearance="outline">
+          <input matInput autocomplete="off" placeholder="Name of item"/>
+        </mat-form-field>
+        <br>
+        <mat-form-field >
+          <textarea matInput placeholder="Descrpition of item"> </textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <input matInput autocomplete="off" placeholder="Quantity of item"/>
+        </mat-form-field>
+        <br>
+
+        <button mat-button color="primary" (click)="saveItem(item)" > Save </button>
+        <br>
+        <button mat-button color="warn" (click)="removeFromStore(item)"> Remove from store </button>
+        <button mat-button color="warn" (click)="deleteFromStore(item)" > Delete Entirely </button>
+        <!-- <div class="edit-img">
+          <img src="../assets/images/flowers/2.jpg"/>
+        </div> -->
+      </mat-card>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -1,0 +1,29 @@
+
+<style>
+
+  button {
+    background-color: black;
+    color: grey;
+  }
+  .view-bag {
+    margin-top: 5%;
+    text-align: center;
+  }
+  .empty-cart {
+    text-align: center;
+  }
+</style>
+
+<p class="empty-cart" *ngIf="data.items.length == 0 else elseBlock"> Your shopping bag is empty</p>
+
+<ng-template #elseBlock>
+  <div >
+    <app-cart-items [items]="data.items" ></app-cart-items>
+  </div>
+</ng-template>
+
+
+<div class="view-bag">
+  <button mat-button (click)="goToCart()"> View Bag </button>
+</div>
+

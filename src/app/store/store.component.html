@@ -1,0 +1,44 @@
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .category-selection {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .form {
+    text-align: center;
+  }
+  #grid-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+  .cards {
+    /* width: 80%; */
+    /* margin-left: 8%; */
+    width: 100%;
+  }
+</style>
+
+<!-- <div class="category-selection">
+  <div class="form">
+    <mat-form-field appearance="fill" class="form">
+      <mat-label>Choose an option</mat-label>
+      <mat-select [(ngModel)]="selectedValue" (valueChange)="changeStoreItems($event)">
+        <mat-option  value="flowers"> Flowers </mat-option>
+        <mat-option value="vases"> Vases </mat-option>
+        <mat-option value="packages"> Wedding packages</mat-option>
+        <mat-option value="extras"> Extras </mat-option>
+        <mat-option value="other"> Other </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div> -->
+
+<div class="cards">
+  <app-items [shoes]="shoes" ></app-items>
+</div>
+

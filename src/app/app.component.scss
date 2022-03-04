@@ -1,0 +1,118 @@
+@font-face {
+  font-family: Custom;
+  src: url("../assets/fonts/BroadwayRegular-7Bpow.ttf") format('opentype');
+}
+@font-face {
+  font-family: Content;
+  src: url("../assets/fonts/RoosterPersonalUse-3z8d8.ttf") format("opentype");
+}
+@font-face {
+  font-family: Cake;
+  src: url("../assets/fonts/MomcakeBold-WyonA.otf") format("opentype");
+}
+a,h1 {
+  font-family: Custom;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+a {
+  font-size: 3rem;
+  color: black;
+  text-decoration: none;
+}
+
+.main {
+  width: 100%;
+}
+.main-img {
+  z-index: 3;
+  width: 5rem;
+  height: 5rem;
+}
+.headers {
+  text-align: center;
+  width: 70%;
+}
+.header {
+  margin-left: 13.5%;
+}
+.main-header {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  color: black;
+  padding-top: 40px;
+}
+.second-header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  font-weight: 600;
+}
+a:hover {
+  color: lightcyan;
+}
+a.active {
+  text-decoration: underline;
+  color: darkgrey;
+}
+.nav-header {
+  padding-top: 10px;
+}
+.navigation {
+  width: 75%;
+  margin-left: 13.5%;
+  text-align: center;
+  height: 100%;
+  background-color: lightgrey;
+}
+.navigation button {
+  height: 100%;
+  font-size: 2rem;
+  font-family: Regular;
+}
+.navigation button:hover {
+  background-color: lightgrey;
+}
+.navigation img {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 3px;
+}
+
+.cart-items {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin-top: 1.5px;
+  margin-left: 20px;
+}
+
+
+footer {
+  width: 100%;
+  height: 5rem;
+  background: black;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  margin-top: 100px;
+}
+.home {
+  margin-right: 16px;
+}
+
+.footer-content {
+  margin-left: 25%;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+
+}
+.footer-content p {
+  padding: 15px;
+}

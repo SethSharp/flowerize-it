@@ -1,0 +1,28 @@
+
+
+<div class="main">
+  <div class="main-header">
+    <h1 class="header headers"> Jesse's Shoe Store </h1>
+  </div>
+  <div class="second-header">
+    <div class="navigation">
+      <a class="home" routerLink="/home" routerLinkActive="active"> Home </a>
+      <a routerLink="/store" routerLinkActive="active"> Store </a>
+      <button mat-button (click)="openCart()" class="bag">
+        <div *ngIf="shared.cartItems.length > 0">
+          <div class="cart-items"> </div>
+        </div>
+        <img src="../assets/images/shopping_bag_white_24dp.svg">
+      </button>
+    </div>
+  </div>
+</div>
+
+<router-outlet [items]="shared.cartItems"></router-outlet>
+
+
+<!-- <footer>
+  <div class="footer-content">
+    <p> Hello: Temp footer content </p>
+  </div>
+</footer> -->

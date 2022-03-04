@@ -1,0 +1,32 @@
+<style>
+  img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .image {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .info {
+    position: relative;
+  }
+</style>
+
+<div class="image">
+  <img src={{data.flower.image}}/>
+</div>
+
+<div class="info">
+  <mat-card>
+    <mat-card-title> {{data.flower.title}} </mat-card-title>
+    <mat-card-subtitle> Price: $ {{data.flower.price}}  </mat-card-subtitle>
+    <mat-card-content>
+      {{data.flower.description}}
+    </mat-card-content>
+    <mat-card-actions>
+      <app-add-item [id]="data.flower.id"></app-add-item>
+    </mat-card-actions>
+  </mat-card>
+</div>

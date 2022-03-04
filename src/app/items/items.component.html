@@ -1,0 +1,14 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .grid-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+</style>
+
+<div class="grid-wrapper">
+  <app-custom-card *ngFor="let shoe of shoes" [shoe]="shoe"></app-custom-card>
+</div>

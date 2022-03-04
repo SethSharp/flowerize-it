@@ -1,0 +1,75 @@
+p {
+  font-family: Regular;
+}
+.orders {
+  width: 90%;
+  margin-left: 5%;
+}
+.quantity {
+  width: 3rem;
+  text-align: center;
+}
+.row {
+  margin-top: 3%;
+  font-size: 1.5rem;
+  padding: 5px;
+  width: 90%;
+  margin-left: 4%;
+
+}
+.row mat-grid-tile {
+  background-color: lightgrey;
+}
+
+.row-titles {
+  margin-top: 3%;
+}
+.item-desc {
+  width: 70%;
+  /* background-color: aliceblue; */
+  /* text-align: center; */
+}
+mat-card {
+  border: 2px black;
+}
+mat-grid-tile {
+  /* width: 100%; */
+  background-color: white;
+}
+.item-img {
+  float: left;
+  width: 5rem;
+  height: 5rem;
+}
+.name {
+  float: right;
+  margin-top: 10%;
+  text-align: center;
+  font-size: 1rem;
+}
+.delete-item {
+  margin-right: 5%;
+  margin-bottom: 1%;
+}
+
+.inner-product {
+  width: 75%;
+  /* float: left; */
+}
+.inner-quantity {
+  width: 60%;
+}
+.quantity {
+  width: 2rem;
+  float: left;
+  margin-top: 8px;
+}
+.delete {
+  float: right;
+}
+p {
+  color: black;
+}
+.cost {
+  font-size: 1.5rem;
+}

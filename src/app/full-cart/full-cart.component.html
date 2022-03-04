@@ -1,0 +1,51 @@
+
+
+
+<div class="row">
+  <mat-grid-list cols="4" rowHeight="3rem" class="row-in">
+    <mat-grid-tile [colspan]="2" >
+      <p class="row-titles"> Products </p>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" >
+      <p class="row-titles"> Quantity </p>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" >
+      <p class="row-titles price"> Price </p>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+
+<br>
+
+<div class="orders" *ngFor="let order of cartItems; let i = index">
+  <mat-grid-list cols="4" rowHeight="9rem" class="row-in">
+    <mat-grid-tile [colspan]="2" >
+
+      <mat-card class="item-desc mat-elevation-z0">
+        <div class="inner-product">
+
+          <img class="item-img" src="../assets/images/tempShoeImgs/thong.jpg"/>
+          <a class="name"> {{order.id}} </a>
+
+        </div>
+      </mat-card>
+
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+      <div class="inner-quantity">
+
+        <input class="quantity" matInput placeholder="Quantity" value="{{order.quantity}}" />
+
+        <button mat-button class="delete" (click)="deleteItem(order.id, i)">
+          <img src="../assets/images/remove_shopping_cart_black_24dp.svg"/>
+        </button>
+
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" class="cost">  {{20*order.quantity}}  </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+</div>
+

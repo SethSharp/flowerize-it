@@ -1,0 +1,92 @@
+
+<style>
+  .left {
+    float: left;
+  }
+  .right {
+    /* width: 100%; */
+    /* float: right; */
+    width: 100%;
+    /* margin-left: 17%; */
+    position: relative;
+  }
+  .names {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .small {
+    width: 6rem;
+  }
+  .medium {
+    width: 8rem;
+  }
+  .long {
+    width: 14rem;
+  }
+</style>
+<!-- Left box, containin items you rae buying as well as price etc -->
+<!-- <div class="left">
+  <mat-card>
+    <mat-card-title>Flowerize-it shopping bag</mat-card-title>
+    <mat-card-content>
+      <mat-card>
+        <p> Contents </p>
+      </mat-card>
+      <hr>
+      <mat-card-subtitle> Subtotal </mat-card-subtitle>
+      <mat-card-subtitle> Shipping </mat-card-subtitle>
+      <hr>
+      <mat-card-subtitle> Total: AUD $41.44 </mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<br>
+
+<div class="right">
+
+  <mat-vertical-stepper [linear]="false">
+    <mat-step label="Information">
+
+      <mat-form-field appearance="outline" class="medium">
+        <mat-label> First Name </mat-label>
+        <input matInput required [(ngModel)]="order.fName" type="text" maxlength="20" autocomplete="off"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="medium">
+        <mat-label> Last Name </mat-label>
+        <input matInput required [(ngModel)]="order.lName" type="text" maxlength="20" autocomplete="off"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="long">
+        <mat-label> Address </mat-label>
+        <input matInput required [(ngModel)]="order.address" type="text" autocomplete="off"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="medium">
+        <mat-label> Suburb </mat-label>
+        <input matInput required [(ngModel)]="order.suburb" type="text" autocomplete="off"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="small">
+        <mat-label> State </mat-label>
+        <input matInput type="text" maxlength="3" required [(ngModel)]="order.state" autocomplete="off"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="small">
+        <mat-label> Post code </mat-label>
+        <input matInput type="number" maxlength="4" required [(ngModel)]="order.postCode" autocomplete="off"/>
+      </mat-form-field>
+
+      <br>
+
+      <button mat-button matStepperNext> Next </button>
+    </mat-step>
+
+    <mat-step label="Payment">
+      <p> Pay Pal etc stuff, once you hit pay, it places the order... </p>
+      <button mat-button (click)="payNow()"> Will test the order funcitonality</button>
+    </mat-step>
+  </mat-vertical-stepper>
+
+</div>

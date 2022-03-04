@@ -1,0 +1,108 @@
+
+<style>
+  .search-field {
+    margin-top: 3%;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  .orders {
+    width: 75%;
+    margin-left: 13.5%;
+    margin-top: 2%;
+  }
+  .order-actions {
+    width: 100%;
+  }
+</style>
+
+<div class="search-field">
+  <mat-form-field>
+    <mat-label> Find Order by ID</mat-label>
+    <input matInput type="search"  [(ngModel)]="search" autocomplete="off">
+  </mat-form-field>
+</div>
+
+<div class="orders">
+
+  <mat-accordion *ngFor="let order of (orders | filter:search )as folder">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          {{order.fName}} - Order ID: {{order.id}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <!-- May need to make editable, but client may also just write it down somewhere... -->
+
+      <mat-card class="edit-description">
+        <mat-label> First Name: {{order.fName}} </mat-label> <br/>
+        <mat-label> Last Name: {{order.lName}} </mat-label> <br/>
+        <mat-label> Phone number: {{order.ph}} </mat-label> <br/>
+        <mat-label> Address: {{order.address}} </mat-label> <br/>
+        <mat-label> Post code: {{order.postCode}} </mat-label> <br/>
+        <mat-label> State: {{order.state}} </mat-label> <br/>
+        <mat-label> Email: {{order.email}} </mat-label> <br/>
+        <mat-label> Deliver notes/general: {{order.notes}} </mat-label> <br/>
+        <mat-label> Items: </mat-label> <br/>
+        <ul>
+          <li *ngFor="let item of order.items">
+
+            {{item.id}}. Quantity: {{item.quantity}}
+
+          </li>
+        </ul>
+        <div class="order-actions">
+          <button mat-button (click)="printOrder(order)"> Print order content </button>
+          <button mat-button (click)="sendOrder(order)"> Send order away </button>
+        </div>
+      </mat-card>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+
+  <div *ngIf="(orders | filter:search).length <1">
+    Order ID not found
+  </div>
+</div>
+
+
+
+<!--
+<div class="orders">
+
+  <mat-accordion *ngFor="let f of (orders | filter:search)as folder">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          {{order.fName}} - Order ID: {{order.id}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-card class="edit-description">
+        <mat-label> First Name: {{order.fName}} </mat-label> <br/>
+        <mat-label> Last Name: {{order.lName}} </mat-label> <br/>
+        <mat-label> Phone number: {{order.ph}} </mat-label> <br/>
+        <mat-label> Address: {{order.address}} </mat-label> <br/>
+        <mat-label> Post code: {{order.postCode}} </mat-label> <br/>
+        <mat-label> State: {{order.state}} </mat-label> <br/>
+        <mat-label> Email: {{order.email}} </mat-label> <br/>
+        <mat-label> Deliver notes/general: {{order.notes}} </mat-label> <br/>
+        <mat-label> Items: </mat-label> <br/>
+        <ul>
+          <li *ngFor="let item of order.items">
+
+            {{item.id}} - {{item.quantity}}
+
+          </li>
+        </ul>
+      </mat-card>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->
