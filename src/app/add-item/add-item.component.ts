@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { SharedService } from '../SharedService/shared.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DbCommunicationService } from '../services/db-communication.service';
 
 @Component({
   selector: 'app-add-item',
@@ -58,7 +59,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AddItemComponent implements OnInit {
   @Input() id: any;
-  constructor(private s: SharedService, private snack: MatSnackBar) {}
+  constructor(
+    private s: SharedService,
+    private snack: MatSnackBar,
+    private dbCom: DbCommunicationService
+  ) {}
   ngOnInit(): void {}
 
   quantity = 0;
@@ -68,17 +73,19 @@ export class AddItemComponent implements OnInit {
     // Add item to cookie
     // Use cart service to do this
     if (quantity == 0) return;
-    this.s.addItemCookie(ID.toString(), quantity);
-    this.quantity = 0;
-    this.snack.open('Item successfully added to cart', '', {
-      duration: 3000,
-      panelClass: "snack-bar",
-    }); // soon to be move to the service
-    // in case the item is now sold out, need to display a different message
+    this.dbCom.addToCart(ID.toString()).subscribe(item => {
+      this.s.addItemCookie(ID.toString(), quantity);
+      this.quantity = 0;
+      this.snack.open('Item successfully added to cart', '', {
+        duration: 3000,
+        panelClass: 'snack-bar',
+      });
+    })
+
 
   }
   decQ() {
-    if (this.quantity==0) return;
+    if (this.quantity == 0) return;
     this.quantity -= 1;
   }
   incQ() {

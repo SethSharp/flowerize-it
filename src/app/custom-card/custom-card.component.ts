@@ -25,7 +25,7 @@ export class CustomCardComponent implements OnInit {
   constructor(
     private dialog: MatDialog
     ) {}
-  ngOnInit(): void {console.log(this.shoe);}
+  ngOnInit(): void {}
 
   getSize(title:string) {
     // if (title.length > 20) { // then its too wide for the car
