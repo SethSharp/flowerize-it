@@ -5,8 +5,16 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const dotEnv = require("dotenv");
 dotEnv.config({path: "../.env"})
+
+// Allows
+let cors = require("cors");
+app.use(cors());
+
+// Allows req.body.item etc
+app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/shoeStore", {

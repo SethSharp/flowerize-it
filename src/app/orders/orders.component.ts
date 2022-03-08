@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from '../Order/Order';
-import { SharedService } from '../SharedService/shared.service';
+import { SharedService } from '../services/Shared/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SendOrderComponent } from './send-order/send-order.component';
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { SharedService } from './SharedService/shared.service';
+import { SharedService } from './services/Shared/shared.service';
 import { ViewCartComponent } from './view-cart/view-cart.component';
 import { CookieService } from 'ngx-cookie-service';
 @Component({

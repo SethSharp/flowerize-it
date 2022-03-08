@@ -8,7 +8,15 @@ export class DbCommunicationService {
   constructor(private http: HttpClient) {}
 
   addToCart(someID:string) {
-    console.log("AYTO")
     return this.http.get(`${this.uri}/items/`);
+  }
+
+  saveItem(item:any) {
+    console.log(item)
+    return this.http.post(`${this.uri}/items/save`,item);
+  }
+
+  getAllItems() {
+    return this.http.get(`${this.uri}/items/getAll`)
   }
 }

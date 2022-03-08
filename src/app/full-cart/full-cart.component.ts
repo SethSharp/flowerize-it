@@ -1,6 +1,6 @@
-import { CartItem } from './../CartItems/cart-item';
+import { CartItem } from '../services/CartItem/cart-item';
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../SharedService/shared.service';
+import { SharedService } from '../services/Shared/shared.service';
 
 @Component({
   selector: 'app-full-cart',

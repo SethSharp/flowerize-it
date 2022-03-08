@@ -1,5 +1,5 @@
 
-import { CartItem } from "../CartItems/cart-item";
+import { CartItem } from "../services/CartItem/cart-item";
 
 export interface Order {
   id: String,

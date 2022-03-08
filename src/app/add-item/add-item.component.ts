@@ -1,9 +1,10 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-import { SharedService } from '../SharedService/shared.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DbCommunicationService } from '../services/db-communication.service';
-
+import { SharedService } from './../services/Shared/shared.service';
+import { DbCommunicationService } from './../services/DB/db-communication.service';
 @Component({
   selector: 'app-add-item',
   template: `

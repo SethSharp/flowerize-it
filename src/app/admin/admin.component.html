@@ -1,73 +1,20 @@
-<style>
-  .add-item {
-    width: 75%;
-    margin-left: 13.5%;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  .existing-items {
-    width: 75%;
-    margin-left: 13.5%;
-  }
-  img {
-    width: 25%;
-    height: 25%;
-  }
-  .edit-description {
-    float: left;
-  }
-  .edit-img {
-    float: right;
-  }
-</style>
 
 <!-- Add a new item -->
-
 <div class="add-item">
-  <mat-card>
-    <mat-card-title> Add new item </mat-card-title>
-    <mat-form-field appearance="outline">
-      <input matInput autocomplete="off" placeholder="Name of item"/>
-    </mat-form-field>
-    <br>
-    <mat-form-field >
-      <textarea matInput placeholder="Descrpition of item"> </textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline">
-      <input matInput autocomplete="off" placeholder="Quantity of item"/>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline">
-      <input matInput autocomplete="off" placeholder="Price of item"/>
-    </mat-form-field>
-    <br>
-    <p> An image input </p>
-    <p> Category selection </p>
 
-    <button mat-button> Add item</button>
-  </mat-card>
+  <input type="file" id="image_input" accept="image/*" (change)="onFileSelected($event)" >
+  <div class="display-img" id="display_img" >
 
+  </div>
+
+  <img
+    [src]="url"
+  >
+  <button mat-button (click)="createItem()"> Save </button>
 </div>
 
 <br>
 
-<style>
-  .search-field {
-    margin-top: 3%;
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-  }
-  .orders {
-    width: 75%;
-    margin-left: 13.5%;
-    margin-top: 2%;
-  }
-  .order-actions {
-    width: 100%;
-  }
-</style>
 
 <div class="search-field">
   <mat-form-field>
